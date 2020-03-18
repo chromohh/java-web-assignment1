@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>corona</title>
+</head>
+<body>
+<h1>BODYTEMP?</h1>
+ <form th:action="@{corona}" method="post">
+  <input type = "number" id = "bodyTempForm" name="bodyTempForm" placeholder="Enter your bodytemp" step="0.01" min="0" max="100"/>
+  <button type="submit" label="Submit">Send</button>
+     <p th:if="${bodyTemp} &gt 37.99">You have fever! <span th:text="${bodyTemp}"></span>c, If above 40 get help!</p>
+     <p th:if="${bodyTemp} &gt 35.01 and ${bodyTemp} &lt 37.99">You are fine! <span th:text="${bodyTemp}"></span>c is a good temp, play some basketball</p>
+     <p th:if="${bodyTemp} &lt 35.01 and ${bodyTemp} &gt 0">You are to Cold! <span th:text="${bodyTemp}"></span>c, If under 34 get help!</p>
+     </div>
+ </form>
+
+
+</div>
+</body>
+</html>
